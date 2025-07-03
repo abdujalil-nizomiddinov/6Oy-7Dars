@@ -21,9 +21,9 @@ function Home() {
 
   if (isPending) {
     return (
-      <>
-        <span className="loading loading-spinner  loading-xl fixed bottom-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-[lime]"></span>
-      </>
+      <div className="fixed top-0 left-0 w-screen h-screen bg-black flex items-center justify-center">
+        <span className="loading loading-bars loading-xl text-[lime]"></span>
+      </div>
     );
   }
   return (

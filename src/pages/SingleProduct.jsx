@@ -13,12 +13,20 @@ function SingleProduct() {
   console.log(modalProduct);
 
   const [heart, setHeart] = useState(false);
-  if (isPending) return <p className="text-white">Yuklanmoqda...</p>;
+  if (isPending)
+    return (
+      <div className="fixed top-0 left-0 w-screen h-screen bg-black flex items-center justify-center">
+        <span className="loading loading-bars loading-xl text-[lime]"></span>
+      </div>
+    );
   if (!modalProduct) return null;
 
   return (
     <>
-      <div className="fixed w-[100vw] h-[100vh] left-0 top-0 bg-black/70 flex items-center justify-center z-10 cursor-pointer">
+      <div className="fixed w-[100vw] h-[100vh] left-0 top-0 bg-black flex items-center justify-center z-10 cursor-pointer">
+        <h2 className="text-[lime] text-4xl absolute top-5 left-5">
+          Single Product id:{modalProduct.id}
+        </h2>
         <div
           className="bg-black p-5 rounded-xl max-w-md w-full relative text-[lime]  shadow-[0_0_30px_lime]"
           onClick={(e) => e.stopPropagation()}
@@ -30,7 +38,7 @@ function SingleProduct() {
             <b>Rating:</b> {modalProduct.rating}
           </p>
           <p className="mb-2 border-b-2">
-            <b>Price:</b> {modalProduct.price}
+            <b>Price:</b> ${modalProduct.price}
           </p>
           <p className="mb-2 border-b-2">
             <b>Description:</b> {modalProduct.description}
