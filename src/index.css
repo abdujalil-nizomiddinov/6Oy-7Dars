@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: monospace;
+}
+body {
+  background: #000;
+}
+#root {
+  margin: auto;
+  display: flex;
+  min-height: 100vh;
+  max-width: 1448px;
+  background: #000;
+  flex-direction: column;
+  justify-content: space-between;
+}
